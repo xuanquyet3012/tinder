@@ -1,0 +1,6 @@
+module Pods_testOnline_testOnlineTests {
+  umbrella header "Pods-testOnline-testOnlineTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
