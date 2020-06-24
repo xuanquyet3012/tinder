@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import CardStack, {Card} from 'react-native-card-stack-swiper';
 import API from '../services/API';
 import Tabbar from '../components/tabbar/Tabbar';
@@ -8,11 +8,13 @@ import FavoritesModal from '../components/modals/FavoritesModal';
 import Images from '../utils/Images';
 import RemoteImage from '../components/images/RemoteImage';
 import {BallIndicator} from 'react-native-indicators';
+import Storage from '../utils/Storage';
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({}) => {
 
     const [data, setData] = useState([]);
-    const [favorites, setFavorites] = useState([]);
+    const [favorites] = useState([]);
+    const [favorites_offline, setFavorites_offline] = useState();
     const [currentIndex, setCurrentIndex] = useState(null);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isModalVisibleFavorites, setIsModalVisibleFavorites] = useState(false);
@@ -26,7 +28,7 @@ const HomeScreen = ({navigation}) => {
     // MARK: - Services
 
     const getData = async () => {
-        for (const index in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) { // Preload
+        for (const index in [0, 1, 2, 3]) { // Preload , 2, 3, 4, 5, 6, 7, 8, 9, 10
             await getNextUser(index);
         }
         if (data.length) {
@@ -34,6 +36,7 @@ const HomeScreen = ({navigation}) => {
         } else {
             //Show view no results
         }
+        loadFavorites();
     };
 
     const getNextUser = async () => {
@@ -43,11 +46,11 @@ const HomeScreen = ({navigation}) => {
                 let _data = data || [];
                 _data.push(response.results[0]);
                 setData(_data);
-                console.log(response.results, _data);
             }
         } catch (e) {
             console.log(e);
         }
+        loadFavorites();
     };
 
     // MARK: - Events
@@ -57,6 +60,7 @@ const HomeScreen = ({navigation}) => {
     };
 
     const onSwipeEnd = async () => {
+
     };
 
     const onSwiped = async () => {
@@ -65,16 +69,24 @@ const HomeScreen = ({navigation}) => {
 
     const onSwipedLeft = async () => {
         await getNextUser();
-        console.log('onSwipedLeft')
     };
 
-    const onSwipedRight = () => {
-        console.log('onSwipedRight');
-        console.log('currentIndex: ', currentIndex);
+    const onSwipedRight = async () => {
         if (currentIndex != null && currentIndex < data.length) {
-            favorites.push(data[currentIndex - 1]);
+            await favorites.push(data[currentIndex - 1]);
+            console.log('favorites: ', favorites);
+            await Storage.saveItem('favorites_offline', JSON.stringify(favorites));
         }
+        await getNextUser();
     };
+
+    const loadFavorites = async () => {
+        let result = await Storage.getItem('favorites_offline');
+        console.log('result: ', JSON.parse(result));
+        setFavorites_offline(JSON.parse(result))
+    };
+
+    console.log('favorites_offline: ', favorites_offline);
 
     const onClickDisLike = () => {
         cardStack.current.swipeLeft();
@@ -102,7 +114,6 @@ const HomeScreen = ({navigation}) => {
 
     // MARK: - UIs
 
-    console.log('favorites: ', favorites);
     const renderItem = () => {
         if (currentIndex !== null && currentIndex < data.length) {
             return (
@@ -120,23 +131,23 @@ const HomeScreen = ({navigation}) => {
                             const {name, gender, location, picture, email} = item.user || {};
                             return (
                                 <Card key={email}>
-                                    <RemoteImage containerStyle={styles.containerImageView}
-                                                 imageStyle={styles.avatarImageView}
-                                                 uri={picture ? { uri: picture } : Images.ic_default_avatar}
-                                                 resizeMode={'contain'} />
-
-                                    <View style={{
-                                        position: 'absolute',
-                                        bottom: 10,
-                                        left: 10,
-                                        right: 10,
-                                    }}>
-                                        <Text style={{fontSize: 30}}>Name: {name.first} {name.last}</Text>
-                                        <Text style={{fontSize: 20}}>Gender: {gender}</Text>
-                                        <Text style={{
-                                            fontSize: 20,
-                                        }}>Location: {location.street} {location.city} {location.state}</Text>
-                                        <Text style={{fontSize: 20}}>Zip Code: {location.zip}</Text>
+                                    <View style={styles.viewImage}>
+                                        <RemoteImage containerStyle={styles.containerImageView}
+                                                     imageStyle={styles.avatarImageView}
+                                                     uri={picture ? {uri: picture} : Images.ic_default_avatar}
+                                                     resizeMode={'contain'}
+                                        />
+                                    </View>
+                                    <View style={styles.viewInformation}>
+                                        <Text style={styles.textSize}>
+                                            Name: {name.first} {name.last}
+                                        </Text>
+                                        <Text style={styles.textSize}>
+                                            Gender: {gender}
+                                        </Text>
+                                        <Text style={styles.textSize}>
+                                            Location: {location.street} {location.city} {location.state}
+                                        </Text>
                                     </View>
                                 </Card>
                             );
@@ -160,9 +171,9 @@ const HomeScreen = ({navigation}) => {
             <View style={{flex: 1}}>
                 {
                     data.length ? renderItem() : (
-                        <View style={{flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}>
+                        <View style={styles.viewIndicator}>
                             <View>
-                                <BallIndicator color={'red'} size={20}/>
+                                <BallIndicator color={'red'} size={30}/>
                             </View>
                         </View>
                     )
@@ -184,7 +195,7 @@ const HomeScreen = ({navigation}) => {
             <FavoritesModal
                 onPressCloseModalFavorite={onPressCloseModalFavorites}
                 isModalVisibleFavorites={isModalVisibleFavorites}
-                listFavorites={favorites}
+                listFavorites={favorites_offline}
             />
         </View>
     );
@@ -223,11 +234,28 @@ const styles = StyleSheet.create({
     containerImageView: {
         width: width - 40,
         height: height - 200,
-
     },
     avatarImageView: {
-       flex: 1,
+        flex: 1,
         borderRadius: 20,
-        backgroundColor: 'white'
-    }
+        backgroundColor: 'white',
+    },
+    viewInformation: {
+        position: 'absolute',
+        bottom: 10,
+        left: 10,
+        right: 10,
+    },
+    textSize: {
+        fontSize: 20,
+    },
+    viewIndicator: {
+        flex: 1,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    viewImage: {
+        flex: 1,
+    },
 });

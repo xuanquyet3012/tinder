@@ -2,12 +2,12 @@ import React from 'react';
 import {
     StyleSheet,
     View,
-    Text, Image, TouchableOpacity, Dimensions,
+    TouchableOpacity, Dimensions,
     FlatList
 } from 'react-native';
-import Images from '../../utils/Images';
 import Modal from 'react-native-modal';
 import FavoritesCell from '../cells/FavoritesCell';
+import Icon from 'react-native-vector-icons/AntDesign';
 const {height, width} = Dimensions.get('window');
 
 const FavoritesModal = ({listFavorites, onPressCloseModalFavorite, isModalVisibleFavorites}) => {
@@ -24,15 +24,14 @@ const FavoritesModal = ({listFavorites, onPressCloseModalFavorite, isModalVisibl
                         style={styles.listView}
                         data={listFavorites || []}
                         horizontal={false}
-                        // showsHorizontalScrollIndicator={false}
                         renderItem={renderFavoritesItem}
                         // keyExtractor={(item, index) => `${item.id}`}
                         extraData={listFavorites}
                     />
                 </View>
-            <TouchableOpacity style={{justifyContent: 'center', alignItems: 'center'}}
+            <TouchableOpacity style={styles.buttonClose}
                               onPress={onPressCloseModalFavorite}>
-                <Image source={Images.ic_close} style={{width: 32, height: 32}}/>
+                <Icon name={'closesquare'} size={40} color={'red'}/>
             </TouchableOpacity>
         </Modal>
     );
@@ -50,5 +49,9 @@ const styles = StyleSheet.create({
     listView: {
         marginHorizontal: 20,
         marginVertical: 20
+    },
+    buttonClose: {
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });

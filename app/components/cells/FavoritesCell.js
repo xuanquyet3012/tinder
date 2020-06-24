@@ -3,32 +3,32 @@ import {
     StyleSheet,
     View,
     Text,
-    Image, Dimensions,
+    Image,
 } from 'react-native';
-const {height, width} = Dimensions.get('window');
 
 const FavoritesCell = ({item}) => {
 
-    console.log('item', item);
     const {picture, name, gender, location, phone} = item.user || {};
 
     return (
         <View style={styles.container}>
 
             {
-                item ? (<View style={{backgroundColor: 'white', borderRadius: 5, flexDirection: 'row', flex: 1}}>
-                    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                        <Image style={{width: 50, height: 50, borderRadius: 5}} source={{uri: picture}}/>
+                item ? (
+                    <View style={styles.viewItem}>
+                        <View style={styles.viewImage}>
+                            <Image style={styles.image} source={{uri: picture}}/>
+                        </View>
+                        <View style={styles.info}>
+                            <Text>Name: {name.first} {name.last}</Text>
+                            <Text>Gender: {gender}</Text>
+                            <Text>Location: {location.street} {location.city} {location.state}</Text>
+                        </View>
+                        <View style={styles.phone}>
+                            <Text style={styles.phone}>Phone number: {phone}</Text>
+                        </View>
                     </View>
-                    <View style={{flex: 2}}>
-                        <Text>Name: {name.first} {name.last}</Text>
-                        <Text>Gender: {gender}</Text>
-                        <Text>Location: {location.street} {location.city} {location.state}</Text>
-                    </View>
-                    <View style={{flex: 1}}>
-                        <Text style={{flex: 1}}>Phone number: {phone}</Text>
-                    </View>
-                </View>) : (<Text>Danh sách trống</Text>)
+                ) : (<Text>Danh sách trống</Text>)
             }
         </View>
     );
@@ -41,6 +41,26 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 10
+        marginBottom: 10,
     },
+    viewItem: {
+        backgroundColor: 'white',
+        borderRadius: 5,
+        flexDirection: 'row',
+        flex: 1
+    },
+    viewImage: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    image: {
+        width: 50, height: 50, borderRadius: 5
+    },
+    info: {
+        flex: 2
+    },
+    phone: {
+        flex: 1
+    }
 });

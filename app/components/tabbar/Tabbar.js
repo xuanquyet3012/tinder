@@ -1,34 +1,32 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {
     StyleSheet,
     View,
-    Text, TouchableOpacity, Image,
+    TouchableOpacity,
 } from 'react-native';
-import Images from '../../utils/Images';
+import Icon from 'react-native-vector-icons/AntDesign';
+import Icon2 from 'react-native-vector-icons/Fontisto';
+
+
 
 const Screen = ({onClickDisLike, onClickLike, onClickHeart, onClickListFavorites, showInformation}) => {
 
     return (
-        <View style={{
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            marginBottom: 40,
-        }}>
+        <View style={styles.container}>
             <TouchableOpacity onPress={onClickDisLike}>
-                <Image style={[styles.button, {tintColor: 'red'}]} source={Images.ic_dislike}/>
+                <Icon name={'dislike2'} size={40} color={'red'}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={onClickLike}>
-                <Image style={[styles.button, {tintColor: 'green'}]} source={Images.ic_like}/>
+                <Icon name={'like2'} size={40} color={'blue'}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={onClickHeart}>
-                <Image style={styles.button} source={Images.ic_heart}/>
+                <Icon name={'heart'} size={40} color={'red'}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={onClickListFavorites}>
-                <Image style={styles.button} source={Images.ic_listfavorite}/>
+                <Icon2 name={'favorite'} size={40} color={'white'}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={showInformation}>
-                <Image style={styles.button} source={Images.ic_information}/>
+                <Icon name={'infocirlceo'} size={40}/>
             </TouchableOpacity>
         </View>
     );
@@ -38,7 +36,10 @@ export default Screen;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginBottom: 40,
     },
     button: {
         width: 36,
