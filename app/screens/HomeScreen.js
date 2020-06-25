@@ -212,8 +212,8 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        marginHorizontal: 20,
-        marginVertical: 100,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     card: {
         backgroundColor: '#FE474C',

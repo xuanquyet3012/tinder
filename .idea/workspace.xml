@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e5bc529-401a-46eb-be91-590859e68166" name="Default Changelist" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/app/utils/Storage.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/.bin/acorn" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/.bin/atob" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/.bin/color-support" afterDir="false" />
@@ -33775,42 +33774,7 @@
       <change afterPath="$PROJECT_DIR$/node_modules/yargs/package.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/yargs/yargs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/cells/FavoritesCell.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/cells/FavoritesCell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/modals/FavoritesModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/modals/FavoritesModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/modals/UserModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/modals/UserModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/tabbar/Tabbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/tabbar/Tabbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/Images.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/Images.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Manifest.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/mac.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/mac.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-testOnlineTests/Pods-testOnline-testOnlineTests-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-testOnlineTests/Pods-testOnline-testOnlineTests-acknowledgements.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-testOnlineTests/Pods-testOnline-testOnlineTests-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-testOnlineTests/Pods-testOnline-testOnlineTests-acknowledgements.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-testOnlineTests/Pods-testOnline-testOnlineTests.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-testOnlineTests/Pods-testOnline-testOnlineTests.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-testOnlineTests/Pods-testOnline-testOnlineTests.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-testOnlineTests/Pods-testOnline-testOnlineTests.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-tvOS/Pods-testOnline-tvOS.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-tvOS/Pods-testOnline-tvOS.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-tvOS/Pods-testOnline-tvOS.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-tvOS/Pods-testOnline-tvOS.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-tvOSTests/Pods-testOnline-tvOSTests.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-tvOSTests/Pods-testOnline-tvOSTests.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-tvOSTests/Pods-testOnline-tvOSTests.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline-tvOSTests/Pods-testOnline-tvOSTests.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline/Pods-testOnline-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline/Pods-testOnline-acknowledgements.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline/Pods-testOnline-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline/Pods-testOnline-acknowledgements.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline/Pods-testOnline.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline/Pods-testOnline.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline/Pods-testOnline.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-testOnline/Pods-testOnline.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/testOnline.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/testOnline.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/testOnline/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/testOnline/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/dislike.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/heart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/info.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/information.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/like.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/phone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/travel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/wishlist.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33894,7 +33858,8 @@
       <workItem from="1592614055657" duration="230000" />
       <workItem from="1592614312063" duration="30000" />
       <workItem from="1592614345246" duration="5900000" />
-      <workItem from="1592973661571" duration="8307000" />
+      <workItem from="1592973661571" duration="8693000" />
+      <workItem from="1593093168527" duration="812000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1592615469584</created>
@@ -33903,7 +33868,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592615469584</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update and fix app">
+      <created>1593007486448</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593007486448</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -33911,13 +33883,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="update and fix app" />
+    <option name="LAST_COMMIT_MESSAGE" value="update and fix app" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="221" y="23" key="CommitChangelistDialog2" timestamp="1593007356117">
+    <state x="221" y="23" key="CommitChangelistDialog2" timestamp="1593094243248">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
-    <state x="221" y="23" key="CommitChangelistDialog2/0.23.1280.729@0.23.1280.729" timestamp="1593007356117" />
+    <state x="221" y="23" key="CommitChangelistDialog2/0.23.1280.729@0.23.1280.729" timestamp="1593094243248" />
     <state width="1259" height="181" key="GridCell.Tab.0.bottom" timestamp="1592938016260">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
@@ -33938,10 +33911,10 @@
       <screen x="0" y="23" width="1280" height="729" />
     </state>
     <state x="141" y="26" key="SettingsEditor/0.23.1280.729@0.23.1280.729" timestamp="1592547801891" />
-    <state x="240" y="129" key="Vcs.Push.Dialog.v2" timestamp="1592615501039">
+    <state x="240" y="129" key="Vcs.Push.Dialog.v2" timestamp="1593007490232">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
-    <state x="240" y="129" key="Vcs.Push.Dialog.v2/0.23.1280.729@0.23.1280.729" timestamp="1592615501039" />
+    <state x="240" y="129" key="Vcs.Push.Dialog.v2/0.23.1280.729@0.23.1280.729" timestamp="1593007490232" />
     <state x="295" y="151" width="689" height="472" key="find.popup" timestamp="1592554366620">
       <screen x="0" y="23" width="1280" height="729" />
     </state>
